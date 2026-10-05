@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Motherland Secondary School — 100% anonymous confessions. Say anything, no name, no trace." />
+    <title>Motherland Secondary School — Anonymous Confession</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Left branding rail -->
+      <aside class="rail" aria-label="School name">
+        <div class="rail-inner">
+          <span class="rail-dot" aria-hidden="true"></span>
+          <h1 class="rail-text">MOTHERLAND SECONDARY SCHOOL</h1>
+          <span class="rail-sub">anonymous confessions</span>
+        </div>
+      </aside>
+
+      <!-- Main blank canvas -->
+      <main class="stage">
+        <div class="stage-top">
+          <p class="eyebrow">100% anonymous &bull; no names &bull; no login</p>
+          <h2 class="headline">Write anything.</h2>
+          <p class="hint">This page does not track you. Your words are encrypted before they are stored.</p>
+        </div>
+
+        <!-- Big A4-shaped rounded textbox -->
+        <section class="sheet-wrap">
+          <div class="sheet" role="form" aria-label="Confession sheet">
+            <div class="sheet-header">
+              <span class="sheet-line"></span>
+              <span class="sheet-badge">A4 &bull; anonymous</span>
+            </div>
+            <label class="sr-only" for="confession">Your confession</label>
+            <textarea
+              id="confession"
+              maxlength="5000"
+              placeholder="Type your confession here… nobody will know it was you."
+              rows="22"
+            ></textarea>
+            <div class="sheet-footer">
+              <span id="charCount" class="char-count">0 / 5000</span>
+              <span id="status" class="status" role="status" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="sendBtn" type="button" class="btn-primary">
+              <span class="btn-label">Drop it anonymously</span>
+            </button>
+            <button id="clearBtn" type="button" class="btn-ghost">Clear</button>
+          </div>
+
+          <p class="fineprint">Be kind. No real names, no phone numbers, no threats. Posts are encrypted (AES-256-GCM) and only readable in the private staff panel.</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
