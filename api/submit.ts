@@ -81,6 +81,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     res.status(200).json({ ok: true });
   } catch (err) {
     console.error('submit error', err);
-    res.status(500).json({ ok: false, error: 'Could not save confession. Try again.' });
+    // TEMPORARY debug: surface the real message so the owner can diagnose.
+    // Revert to a generic message once fixed.
+    const detail = err instanceof Error ? err.message : 'unknown error';
+    res.status(500).json({ ok: false, error: `DEBUG: ${detail}` });
   }
 }
